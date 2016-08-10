@@ -11,12 +11,7 @@ models.forEach((model, i) => {
   name = path.basename(file, '.js')
   capitalized = name.charAt(0).toUpperCase() + name.slice(1)
   data = fs.readFileSync(file, 'utf8')
-
-  m[capitalized] = (Parse) => {
-    const e = eval(data)
-    console.log(e)
-    return e
-  }
+  m[capitalized] = eval(data)
 })
 
 module.exports = m
