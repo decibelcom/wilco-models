@@ -1,0 +1,20 @@
+{
+  "name": "wilco-models",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/decibelcom/wilco-models.git"
+  },
+  "author": "Decibel Communication",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/decibelcom/wilco-models/issues"
+  },
+  "homepage": "https://github.com/decibelcom/wilco-models#readme",
+  "dependencies": {}
+}
