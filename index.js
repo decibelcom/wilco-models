@@ -4,7 +4,7 @@ const path = require('path')
 
 let m = {}
 
-const dir = './models';
+const dir = path.join(__dirname, 'models')
 const models = fs.readdirSync(dir)
 models.forEach((model, i) => {
   file = path.join(dir, model)
