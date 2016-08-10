@@ -13,10 +13,10 @@ models.forEach((model, i) => {
   data = fs.readFileSync(file, 'utf8')
 
   m[capitalized] = (Parse) => {
-    return eval(data)
+    const e = eval(data)
+    console.log(e)
+    return e
   }
 })
-
-console.log(m)
 
 module.exports = m
