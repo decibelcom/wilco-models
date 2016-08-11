@@ -1,8 +1,12 @@
 _parameter_obj = {
+  defaults: {
+    hidden: true
+  },
+
   initialize: function (attrs, options) {
-    this.key = attrs.key
-    this.val = attrs.val
-    this.hidden = attrs.hidden || true
-    this.beautify = attrs.beautify || ''
+    var props = ['key', 'val', 'hidden', 'beautify']
+
+    for(var i = 0; i < props.length; i++)
+      if(attrs[props[i]]) this[props[i]] = attrs[props[i]]
   }
 }
