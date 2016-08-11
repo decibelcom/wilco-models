@@ -1,4 +1,4 @@
-module.exports = {
+_parameter_obj = {
   initialize: function (attrs, options) {
     this.key = attrs.key
     this.val = attrs.val

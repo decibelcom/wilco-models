@@ -1,4 +1,4 @@
-module.exports = {
+_card_obj = {
   initialize: function (attrs, options) {
     this.iccid = attrs.iccid
     this.onum = attrs.onum

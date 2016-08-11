@@ -1,0 +1,18 @@
+{
+  "name": "wilco-models",
+  "description": "",
+  "main": "./src/bundle.js",
+  "authors": [
+    "Decibel Communication"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/decibelcom/wilco-models",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
