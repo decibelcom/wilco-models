@@ -1,5 +1,7 @@
 _card_obj = {
   initialize: function (attrs, options) {
+    if(!attrs) return
+    
     var props = ['iccid', 'onum', 'user', 'owner']
 
     for(var i = 0; i < props.length; i++)
@@ -9,6 +11,8 @@ _card_obj = {
 
 _offer_obj = {
   initialize: function (attrs, options) {
+    if(!attrs) return
+    
     var props = ['name', 'price']
 
     for(var i = 0; i < props.length; i++)
@@ -22,6 +26,8 @@ _parameter_obj = {
   },
 
   initialize: function (attrs, options) {
+    if(!attrs) return
+
     var props = ['key', 'val', 'hidden', 'beautify']
 
     for(var i = 0; i < props.length; i++)
