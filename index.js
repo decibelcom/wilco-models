@@ -16,7 +16,7 @@ const build = (mdata) => {
     fs.writeFileSync(file, model.content)
 
     bundlearr.push(model.content)
-    loaderarr.push(`${model.capitalized} = Parse.Object.extend('${model.capitalized}', ${model.objname})`)
+    loaderarr.push(`var ${model.capitalized} = Parse.Object.extend('${model.capitalized}', ${model.objname})`)
   })
 
   const loader = loaderarr.join('\n')
