@@ -2,7 +2,18 @@ _card_obj = {
   initialize: function (attrs, options) {
     if(!attrs) return
 
-    var props = ['iccid', 'onum', 'inum', 'owner', 'locked']
+    var props = ['iccid', 'onum', 'inum', 'balance', 'owner', 'blocked', 'booked']
+
+    for(var i = 0; i < props.length; i++)
+      if(attrs[props[i]]) this[props[i]] = attrs[props[i]]
+  }
+}
+
+_enterprise_obj = {
+  initialize: function (attrs, options) {
+    if(!attrs) return
+
+    var props = ['name', 'owner']
 
     for(var i = 0; i < props.length; i++)
       if(attrs[props[i]]) this[props[i]] = attrs[props[i]]
@@ -51,6 +62,7 @@ _parameter_obj = {
 }
 
 var Card = Parse.Object.extend('Card', _card_obj)
+var Enterprise = Parse.Object.extend('Enterprise', _enterprise_obj)
 var Offer = Parse.Object.extend('Offer', _offer_obj)
 var Order = Parse.Object.extend('Order', _order_obj)
 var Parameter = Parse.Object.extend('Parameter', _parameter_obj)
