@@ -1,5 +1,7 @@
 var Card = Parse.Object.extend('Card', _card_obj)
 var Enterprise = Parse.Object.extend('Enterprise', _enterprise_obj)
+var Invoice = Parse.Object.extend('Invoice', _invoice_obj)
 var Offer = Parse.Object.extend('Offer', _offer_obj)
 var Order = Parse.Object.extend('Order', _order_obj)
 var Parameter = Parse.Object.extend('Parameter', _parameter_obj)
+var Project = Parse.Object.extend('Project', _project_obj)
