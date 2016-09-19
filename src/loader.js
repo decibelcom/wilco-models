@@ -1,3 +1,4 @@
+var Action = Parse.Object.extend('Action', _action_obj)
 var Card = Parse.Object.extend('Card', _card_obj)
 var Enterprise = Parse.Object.extend('Enterprise', _enterprise_obj)
 var Invoice = Parse.Object.extend('Invoice', _invoice_obj)

@@ -1,3 +1,14 @@
+_action_obj = {
+  initialize: function (attrs, options) {
+    if(!attrs) return
+
+    var props = ['service', 'description', 'amount', 'user', 'invoice']
+
+    for(var i = 0; i < props.length; i++)
+      if(attrs[props[i]]) this[props[i]] = attrs[props[i]]
+  }
+}
+
 _card_obj = {
   initialize: function (attrs, options) {
     if(!attrs) return
@@ -24,7 +35,7 @@ _invoice_obj = {
   initialize: function (attrs, options) {
     if(!attrs) return
 
-    var props = ['service', 'description', 'amount', 'user']
+    var props = ['total', 'user']
 
     for(var i = 0; i < props.length; i++)
       if(attrs[props[i]]) this[props[i]] = attrs[props[i]]
@@ -83,6 +94,7 @@ _project_obj = {
   }
 }
 
+var Action = Parse.Object.extend('Action', _action_obj)
 var Card = Parse.Object.extend('Card', _card_obj)
 var Enterprise = Parse.Object.extend('Enterprise', _enterprise_obj)
 var Invoice = Parse.Object.extend('Invoice', _invoice_obj)
