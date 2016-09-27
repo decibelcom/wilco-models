@@ -20,6 +20,17 @@ _card_obj = {
   }
 }
 
+_country_obj = {
+  initialize: function (attrs, options) {
+    if(!attrs) return
+
+    var props = ['code', 'english_name']
+
+    for(var i = 0; i < props.length; i++)
+      if(attrs[props[i]]) this[props[i]] = attrs[props[i]]
+  }
+}
+
 _enterprise_obj = {
   initialize: function (attrs, options) {
     if(!attrs) return
@@ -98,7 +109,7 @@ _rate_obj = {
   initialize: function (attrs, options) {
     if(!attrs) return
 
-    var props = ['country', 'inbound', 'outbound', 'one_sim_card_to_one_sim_card_first_minute', 'one_sim_card_to_one_sim_card_next_minutes', 'outbound_sms', 'discount_sms', 'travel_sms', 'inbound_sms']
+    var props = ['country', 'standard_rates', 'plus_rates', 'data_roam_rates', 'europe_more_rates']
 
     for(var i = 0; i < props.length; i++)
       if(attrs[props[i]]) this[props[i]] = attrs[props[i]]
@@ -107,6 +118,7 @@ _rate_obj = {
 
 var Action = Parse.Object.extend('Action', _action_obj)
 var Card = Parse.Object.extend('Card', _card_obj)
+var Country = Parse.Object.extend('Country', _country_obj)
 var Enterprise = Parse.Object.extend('Enterprise', _enterprise_obj)
 var Invoice = Parse.Object.extend('Invoice', _invoice_obj)
 var Offer = Parse.Object.extend('Offer', _offer_obj)
