@@ -53,6 +53,17 @@ _invoice_obj = {
   }
 }
 
+_item_obj = {
+  initialize: function (attrs, options) {
+    if(!attrs) return
+
+    var props = ['sellsy_id', 'name', 'notes', 'ref', 'enabled', 'taxid']
+
+    for(var i = 0; i < props.length; i++)
+      if(attrs[props[i]]) this[props[i]] = attrs[props[i]]
+  }
+}
+
 _offer_obj = {
   initialize: function (attrs, options) {
     if(!attrs) return
@@ -72,7 +83,7 @@ _order_obj = {
   initialize: function (attrs, options) {
     if(!attrs) return
 
-    var props = ['service', 'description', 'amount', 'charge', 'user', 'refunded', 'validated']
+    var props = ['service', 'description', 'amount', 'charge', 'user', 'refunded', 'validated', 'rows']
 
     for(var i = 0; i < props.length; i++)
       if(attrs[props[i]]) this[props[i]] = attrs[props[i]]
@@ -121,6 +132,7 @@ var Card = Parse.Object.extend('Card', _card_obj)
 var Country = Parse.Object.extend('Country', _country_obj)
 var Enterprise = Parse.Object.extend('Enterprise', _enterprise_obj)
 var Invoice = Parse.Object.extend('Invoice', _invoice_obj)
+var Item = Parse.Object.extend('Item', _item_obj)
 var Offer = Parse.Object.extend('Offer', _offer_obj)
 var Order = Parse.Object.extend('Order', _order_obj)
 var Parameter = Parse.Object.extend('Parameter', _parameter_obj)
