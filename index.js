@@ -36,7 +36,7 @@ const start = (b = true) => {
   let mdata = []
   models.forEach((model, i) => {
     const file = path.join(models_dir, model)
-    const name = path.basename(file, '.js')
+    const name = path.basename(file, '.js').replace(/-([a-z])/g, (g) => { return g[1].toUpperCase() })
     const capitalized = name.charAt(0).toUpperCase() + name.slice(1)
     const data = fs.readFileSync(file, 'utf8')
 

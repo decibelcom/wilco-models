@@ -105,6 +105,22 @@ _parameter_obj = {
   }
 }
 
+_permissionRequest_obj = {
+  defaults: {
+    accepted: false,
+    treated: false
+  },
+
+  initialize: function (attrs, options) {
+    if(!attrs) return
+
+    var props = ['user', 'accepted', 'treated']
+
+    for(var i = 0; i < props.length; i++)
+      if(attrs[props[i]]) this[props[i]] = attrs[props[i]]
+  }
+}
+
 _project_obj = {
   initialize: function (attrs, options) {
     if(!attrs) return
@@ -136,5 +152,6 @@ var Item = Parse.Object.extend('Item', _item_obj)
 var Offer = Parse.Object.extend('Offer', _offer_obj)
 var Order = Parse.Object.extend('Order', _order_obj)
 var Parameter = Parse.Object.extend('Parameter', _parameter_obj)
+var PermissionRequest = Parse.Object.extend('PermissionRequest', _permissionRequest_obj)
 var Project = Parse.Object.extend('Project', _project_obj)
 var Rate = Parse.Object.extend('Rate', _rate_obj)
